@@ -1,0 +1,65 @@
+<ion-header>
+
+
+  <ion-toolbar>
+
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/"
+        text= "volver"
+        color= "primary"
+        mode= "ios">
+     </ion-back-button>
+    </ion-buttons>
+
+    <ion-title>crear usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <ion-item>
+    <ion-label>Ingrese su nombre: </ion-label>
+    <ion-input type="text" placeholder="Enter Input"
+    name="nombre" [(ngModel)]= "nombre"
+                required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Ingrese su edad: </ion-label>
+    <ion-input type="number" min= "13" max="50" value="13" 
+    name="edad" [(ngModel)]= "edad"
+                required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Género</ion-label>
+    <ion-select placeholder="Select One" name="genero" [(ngModel)]= "genero"
+    required>
+      <ion-select-option value="f">Mujer</ion-select-option>
+      <ion-select-option value="m">Hombre</ion-select-option>
+      <ion-select-option value="o">Otro</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+    
+
+    <ion-item>
+      <ion-label>Email: </ion-label>
+      <ion-input type="email" placeholder="Email"
+                name="email" [(ngModel)]= "email"
+                pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password: </ion-label>
+      <ion-input type="password" placeholder="Contraseña"
+                name="password" [(ngModel)]= "password"
+                required>
+
+      </ion-input>
+    </ion-item>
+    <ion-button hreft='/login' (click)='signup()' expand='block'>Crear 
+      usuario
+    </ion-button>

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+
+
+
+    <ion-avatar slot="start">
+        <img src="assets/soldadura.jpg">
+    </ion-avatar>
+    <ion-title>inicio</ion-title>  
+    <ion-button icon-only slot="end" href="/login" >
+      <ion-icon name="person-circle-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Bienvenido</ion-card-subtitle>
+      <ion-card-title>Maestro Soldador</ion-card-title>
+      <ion-searchbar></ion-searchbar>
+    </ion-card-header>
+    <ion-card-content>
+      app, para el conocimiento de diferentes fierros
+      y sus diferencias incluyendo la diferentes soldaduras.
+    </ion-card-content>
+    <img src="assets/imagen.jpg" >
+  </ion-card>
+    
+
+  <ion-list class="ion-padding">
+    <ion-item *ngFor="let c of componentes"
+            [routerLink] = "c.redirecTo"
+            detail="true"> 
+            <ion-icon [name]="c.icon"
+              slot="start"
+              color="primary"></ion-icon> 
+              {{c.name}}
+        </ion-item>
+  </ion-list>
+
+  
+
+</ion-content>

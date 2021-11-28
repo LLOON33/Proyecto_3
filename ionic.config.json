@@ -1,0 +1,7 @@
+{
+  "name": "soldadura",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
